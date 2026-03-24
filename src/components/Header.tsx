@@ -44,7 +44,7 @@ export default function Header() {
           {/* Логотип — белый через invert */}
           <a href="/" className="flex items-center flex-shrink-0">
             <img
-              src="https://cdn.poehali.dev/files/cea3e3ce-f97d-45af-a631-5c3af0c7604e.jpg"
+              src="https://cdn.poehali.dev/files/91fa8e15-8a7f-4588-9cd8-26ce04720afc.jpg"
               alt="Профланец — Завод деталей и узлов для инженерных систем"
               className="h-10 w-auto object-contain brightness-0 invert"
             />

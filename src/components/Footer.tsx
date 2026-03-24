@@ -86,7 +86,7 @@ export default function Footer() {
             {/* Бренд */}
             <div>
               <img
-                src="https://cdn.poehali.dev/files/cea3e3ce-f97d-45af-a631-5c3af0c7604e.jpg"
+                src="https://cdn.poehali.dev/files/91fa8e15-8a7f-4588-9cd8-26ce04720afc.jpg"
                 alt="Профланец"
                 className="h-10 w-auto object-contain brightness-0 invert mb-4"
               />
