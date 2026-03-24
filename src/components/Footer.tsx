@@ -88,7 +88,8 @@ export default function Footer() {
               <img
                 src="https://cdn.poehali.dev/files/91fa8e15-8a7f-4588-9cd8-26ce04720afc.jpg"
                 alt="Профланец"
-                className="h-10 w-auto object-contain brightness-0 invert mb-4"
+                className="h-10 w-auto object-contain mb-4"
+                style={{ mixBlendMode: "screen" }}
               />
               <p className="text-gray-400 text-sm font-golos leading-relaxed max-w-xs">
                 Производство и поставка запорной арматуры, фланцев и деталей трубопровода для промышленных объектов.
