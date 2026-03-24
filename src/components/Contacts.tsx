@@ -27,35 +27,20 @@ export default function Contacts() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact info */}
-          <div className="space-y-8">
-            <div className="space-y-5">
+          {/* Контактная информация */}
+          <div className="space-y-6">
+            <div className="space-y-4">
               {[
-                {
-                  icon: "Phone",
-                  label: "Телефон",
-                  value: "+7 (982) 710-06-84",
-                  href: "tel:+79827100684",
-                },
-                {
-                  icon: "Mail",
-                  label: "E-mail",
-                  value: "Proflanec@mail.ru",
-                  href: "mailto:Proflanec@mail.ru",
-                },
-                {
-                  icon: "MapPin",
-                  label: "Адрес",
-                  value: "Екатеринбург, Артинская 14к1, офис 27",
-                  href: null,
-                },
+                { icon: "Phone", label: "Телефон", value: "+7 (982) 675-64-49", href: "tel:+79826756449" },
+                { icon: "Mail", label: "E-mail", value: "info@proflanec.ru", href: "mailto:info@proflanec.ru" },
+                { icon: "MapPin", label: "Адрес", value: "Екатеринбург, Артинская 14к1, офис 27", href: null },
               ].map((contact) => (
                 <div key={contact.label} className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[var(--brand-blue)] flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div className="w-10 h-10 bg-[var(--brand-accent)] flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Icon name={contact.icon as never} size={18} className="text-white" />
                   </div>
                   <div>
-                    <p className="text-gray-500 text-xs font-golos uppercase tracking-wider mb-1">{contact.label}</p>
+                    <p className="text-gray-500 text-xs font-golos uppercase tracking-wider mb-0.5">{contact.label}</p>
                     {contact.href ? (
                       <a href={contact.href} className="text-white font-golos font-medium hover:text-[var(--brand-accent)] transition-colors">
                         {contact.value}
@@ -68,14 +53,15 @@ export default function Contacts() {
               ))}
             </div>
 
-            <div className="border border-white/10 bg-white/5 p-6">
-              <h3 className="font-oswald text-white font-semibold uppercase tracking-wide text-sm mb-4">
+            {/* Режим работы */}
+            <div className="border border-white/10 bg-white/5 p-5">
+              <h3 className="font-oswald text-white font-semibold uppercase tracking-wide text-xs mb-4">
                 Режим работы
               </h3>
               <div className="space-y-2 font-golos text-sm">
                 <div className="flex justify-between">
                   <span className="text-gray-400">Пн – Пт</span>
-                  <span className="text-white">8:00 – 17:00</span>
+                  <span className="text-white font-medium">8:00 – 17:00</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-400">Сб – Вс</span>
@@ -84,8 +70,26 @@ export default function Contacts() {
               </div>
             </div>
 
-            <div className="border border-white/10 bg-white/5 p-6">
-              <h3 className="font-oswald text-white font-semibold uppercase tracking-wide text-sm mb-3">
+            {/* Реквизиты */}
+            <div className="border border-white/10 bg-white/5 p-5">
+              <h3 className="font-oswald text-white font-semibold uppercase tracking-wide text-xs mb-4">
+                Реквизиты
+              </h3>
+              <div className="space-y-2 font-golos text-sm">
+                <div className="flex justify-between gap-4">
+                  <span className="text-gray-400 flex-shrink-0">ИНН</span>
+                  <span className="text-white font-medium">6678114461</span>
+                </div>
+                <div className="flex justify-between gap-4">
+                  <span className="text-gray-400 flex-shrink-0">ОГРН</span>
+                  <span className="text-white font-medium">1216600047730</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Что принимаем */}
+            <div className="border border-white/10 bg-white/5 p-5">
+              <h3 className="font-oswald text-white font-semibold uppercase tracking-wide text-xs mb-3">
                 Что принимаем
               </h3>
               <ul className="space-y-2">
@@ -99,7 +103,7 @@ export default function Contacts() {
             </div>
           </div>
 
-          {/* Form */}
+          {/* Форма */}
           <div className="bg-white p-8">
             {!sent ? (
               <>
@@ -110,68 +114,58 @@ export default function Contacts() {
                   <div>
                     <label className="block text-gray-600 text-xs font-golos uppercase tracking-wider mb-1.5">Имя *</label>
                     <input
-                      name="name"
-                      type="text"
-                      required
-                      value={form.name}
-                      onChange={handleChange}
+                      name="name" type="text" required value={form.name} onChange={handleChange}
                       placeholder="Иван Петров"
-                      className="w-full border border-gray-200 px-4 py-3 text-sm font-golos text-gray-800 focus:border-[var(--brand-blue)] focus:outline-none transition-colors"
+                      className="w-full border border-gray-200 px-4 py-3 text-sm font-golos text-gray-800 focus:border-[var(--brand-accent)] focus:outline-none transition-colors"
                     />
                   </div>
                   <div>
                     <label className="block text-gray-600 text-xs font-golos uppercase tracking-wider mb-1.5">Компания</label>
                     <input
-                      name="company"
-                      type="text"
-                      value={form.company}
-                      onChange={handleChange}
+                      name="company" type="text" value={form.company} onChange={handleChange}
                       placeholder="ООО «Наименование»"
-                      className="w-full border border-gray-200 px-4 py-3 text-sm font-golos text-gray-800 focus:border-[var(--brand-blue)] focus:outline-none transition-colors"
+                      className="w-full border border-gray-200 px-4 py-3 text-sm font-golos text-gray-800 focus:border-[var(--brand-accent)] focus:outline-none transition-colors"
                     />
                   </div>
                   <div>
                     <label className="block text-gray-600 text-xs font-golos uppercase tracking-wider mb-1.5">Телефон *</label>
                     <input
-                      name="phone"
-                      type="tel"
-                      required
-                      value={form.phone}
-                      onChange={handleChange}
+                      name="phone" type="tel" required value={form.phone} onChange={handleChange}
                       placeholder="+7 (___) ___-__-__"
-                      className="w-full border border-gray-200 px-4 py-3 text-sm font-golos text-gray-800 focus:border-[var(--brand-blue)] focus:outline-none transition-colors"
+                      className="w-full border border-gray-200 px-4 py-3 text-sm font-golos text-gray-800 focus:border-[var(--brand-accent)] focus:outline-none transition-colors"
                     />
                   </div>
                   <div>
                     <label className="block text-gray-600 text-xs font-golos uppercase tracking-wider mb-1.5">Описание задачи</label>
                     <textarea
-                      name="message"
-                      value={form.message}
-                      onChange={handleChange}
-                      rows={4}
-                      placeholder="Опишите задачу: среда, давление, диаметр, количество. Можете приложить чертёж на e-mail."
-                      className="w-full border border-gray-200 px-4 py-3 text-sm font-golos text-gray-800 focus:border-[var(--brand-blue)] focus:outline-none transition-colors resize-none"
+                      name="message" value={form.message} onChange={handleChange} rows={4}
+                      placeholder="Опишите задачу: среда, давление, диаметр, количество. Чертёж можно отправить на info@proflanec.ru"
+                      className="w-full border border-gray-200 px-4 py-3 text-sm font-golos text-gray-800 focus:border-[var(--brand-accent)] focus:outline-none transition-colors resize-none"
                     />
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-[var(--brand-blue)] hover:bg-[var(--brand-blue-light)] text-white font-golos font-medium py-3.5 transition-colors flex items-center justify-center gap-2"
+                    className="w-full bg-[var(--brand-accent)] hover:bg-[var(--brand-accent-hover)] text-white font-golos font-semibold py-3.5 transition-colors flex items-center justify-center gap-2"
                   >
                     <Icon name="Send" size={16} />
                     Отправить заявку
                   </button>
                   <p className="text-gray-400 text-xs font-golos text-center">
-                    Нажимая кнопку, вы соглашаетесь на обработку персональных данных
+                    Нажимая кнопку, вы соглашаетесь с{" "}
+                    <a href="/privacy" className="underline hover:text-gray-600 transition-colors">политикой конфиденциальности</a>
                   </p>
                 </form>
               </>
             ) : (
               <div className="flex flex-col items-center justify-center h-full min-h-64 text-center">
-                <div className="w-12 h-12 bg-green-100 flex items-center justify-center mb-4">
-                  <Icon name="CheckCircle" size={24} className="text-green-600" />
+                <div className="w-14 h-14 bg-[var(--brand-accent)]/10 flex items-center justify-center mb-4">
+                  <Icon name="CheckCircle" size={28} className="text-[var(--brand-accent)]" />
                 </div>
-                <h3 className="font-oswald text-[var(--brand-navy)] font-bold uppercase text-lg mb-2">Заявка отправлена</h3>
-                <p className="text-gray-500 font-golos text-sm">Свяжемся с вами в течение рабочего дня</p>
+                <h3 className="font-oswald text-[var(--brand-navy)] font-bold uppercase text-xl mb-2">Заявка отправлена</h3>
+                <p className="text-gray-500 font-golos text-sm max-w-xs">
+                  Свяжемся с вами в течение рабочего дня. Чертёж можно отправить на{" "}
+                  <a href="mailto:info@proflanec.ru" className="text-[var(--brand-accent)]">info@proflanec.ru</a>
+                </p>
               </div>
             )}
           </div>

@@ -15,43 +15,50 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
-      {/* Background image + overlay */}
+      {/* Фоновое фото сварщика */}
       <div className="absolute inset-0">
         <img
-          src="https://cdn.poehali.dev/projects/204df12d-ef99-4148-9b5f-03e9c7f70542/files/edf44902-d39a-4db3-9376-0f153e4c5d46.jpg"
-          alt="Промышленный трубопровод"
-          className="w-full h-full object-cover"
+          src="https://cdn.poehali.dev/files/cea3e3ce-f97d-45af-a631-5c3af0c7604e.jpg"
+          alt="Производство — сварка фланцевых деталей трубопровода"
+          className="w-full h-full object-cover object-center scale-105"
+          style={{ objectPosition: "60% center" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[var(--brand-navy)]/95 via-[var(--brand-navy)]/85 to-[var(--brand-navy)]/60" />
-        <div className="absolute inset-0 hero-pattern" />
+        {/* Сильный тёмный градиент слева — текст читается всегда */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/30" />
+        {/* Снизу затемнение */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
       </div>
 
-      {/* Accent vertical bar */}
+      {/* Оранжевая вертикальная полоса слева */}
       <div className="absolute left-0 top-0 bottom-0 w-1 bg-[var(--brand-accent)]" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-28 pb-20">
-        <div className="max-w-3xl">
-          {/* Label */}
-          <span className="section-label animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            Производство и поставка · Екатеринбург
-          </span>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-32 pb-20">
+        <div className="max-w-2xl">
+          {/* Метка */}
+          <div className="flex items-center gap-3 mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+            <span className="block w-8 h-[2px] bg-[var(--brand-accent)]" />
+            <span className="text-[var(--brand-accent)] text-xs font-golos uppercase tracking-[0.2em] font-medium">
+              Производство и поставка · Екатеринбург
+            </span>
+          </div>
 
           {/* H1 */}
           <h1
-            className="font-oswald font-bold text-white text-4xl md:text-5xl lg:text-6xl leading-tight uppercase tracking-wide mb-6 animate-fade-up"
+            className="font-oswald font-bold text-white text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.1] uppercase tracking-wide mb-5 animate-fade-up"
             style={{ animationDelay: "0.2s" }}
           >
-            Запорная арматура, фланцы и детали трубопровода
-            <span className="block text-[var(--brand-accent)] mt-1">для промышленных объектов</span>
+            Запорная арматура,<br />
+            фланцы и детали<br />
+            <span className="text-[var(--brand-accent)]">трубопровода</span>
           </h1>
 
           {/* Subtitle */}
           <p
-            className="text-gray-300 text-lg leading-relaxed mb-8 font-golos animate-fade-up max-w-2xl"
+            className="text-gray-200 text-base leading-relaxed mb-8 font-golos animate-fade-up"
             style={{ animationDelay: "0.3s" }}
           >
-            Подбор под среду, давление и температуру. Изготовление нестандартных деталей трубопровода.
-            Работа по чертежам заказчика. Диаметры 10–1600 мм, материалы Сталь 20, 09Г2С, 12Х18Н10Т.
+            Подбор под среду, давление и температуру. Изготовление нестандартных деталей.
+            Работа по чертежам заказчика. Диаметры 10–1600 мм.
           </p>
 
           {/* CTA Buttons */}
@@ -61,7 +68,7 @@ export default function Hero() {
           >
             <button
               onClick={() => scrollTo("#contacts")}
-              className="btn-primary inline-flex items-center gap-2"
+              className="inline-flex items-center gap-2 bg-[var(--brand-accent)] hover:bg-[var(--brand-accent-hover)] text-white font-golos font-semibold px-6 py-3.5 transition-colors duration-200"
             >
               <Icon name="Send" size={16} />
               Отправить заявку
@@ -74,26 +81,26 @@ export default function Hero() {
               Отправить чертёж
             </button>
             <button
-              onClick={() => scrollTo("#tasks")}
+              onClick={() => scrollTo("#catalog")}
               className="btn-outline inline-flex items-center gap-2"
             >
-              <Icon name="Search" size={16} />
-              Получить подбор
+              <Icon name="BookOpen" size={16} />
+              Каталог продукции
             </button>
           </div>
 
           {/* Stats */}
           <div
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 animate-fade-up"
+            className="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up"
             style={{ animationDelay: "0.5s" }}
           >
             {stats.map((s) => (
-              <div key={s.label} className="border border-white/15 bg-white/5 px-4 py-3 backdrop-blur-sm">
-                <div className="flex items-baseline gap-1">
-                  <span className="font-oswald text-2xl font-bold text-white">{s.value}</span>
-                  {s.unit && <span className="text-[var(--brand-accent)] text-sm font-golos">{s.unit}</span>}
+              <div key={s.label} className="border border-white/20 bg-black/40 backdrop-blur-sm px-4 py-3">
+                <div className="flex items-baseline gap-1 flex-wrap">
+                  <span className="font-oswald text-xl font-bold text-white">{s.value}</span>
+                  {s.unit && <span className="text-[var(--brand-accent)] text-xs font-golos">{s.unit}</span>}
                 </div>
-                <p className="text-gray-400 text-xs mt-1 font-golos">{s.label}</p>
+                <p className="text-gray-400 text-xs mt-0.5 font-golos">{s.label}</p>
               </div>
             ))}
           </div>
