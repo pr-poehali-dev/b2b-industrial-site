@@ -15,18 +15,17 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
-      {/* Фоновое фото сварщика */}
+      {/* Фоновое фото — производство фланцев и труб */}
       <div className="absolute inset-0">
         <img
-          src="https://cdn.poehali.dev/files/cea3e3ce-f97d-45af-a631-5c3af0c7604e.jpg"
-          alt="Производство — сварка фланцевых деталей трубопровода"
-          className="w-full h-full object-cover object-center scale-105"
-          style={{ objectPosition: "60% center" }}
+          src="https://cdn.poehali.dev/projects/204df12d-ef99-4148-9b5f-03e9c7f70542/files/97476b70-f69b-41b6-b98f-3897a24f5ff4.jpg"
+          alt="Производство фланцев и деталей трубопровода"
+          className="w-full h-full object-cover object-center"
         />
-        {/* Сильный тёмный градиент слева — текст читается всегда */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/30" />
-        {/* Снизу затемнение */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
+        {/* Равномерное затемнение */}
+        <div className="absolute inset-0 bg-black/70" />
+        {/* Градиент слева для читаемости текста */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent" />
       </div>
 
       {/* Оранжевая вертикальная полоса слева */}
